@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Happy Birthday, Aarushi 🎂</title>
+
+<!-- Fonts: a cursive script for the emotional headline moments, a clean sans for everything functional -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ============================================================
+     PAGE 1 — MAKE A WISH
+     ============================================================ -->
+<main id="wish-page" class="page page--active" aria-label="Make a wish">
+
+  <!-- Animated background layers -->
+  <div class="sky" aria-hidden="true">
+    <div class="stars" id="stars"></div>
+    <div class="particles" id="particles"></div>
+  </div>
+
+  <div class="wish-content">
+
+    <header class="wish-header">
+      <h1 class="script-heading">Make a Wish! <span class="sparkle">✨</span></h1>
+      <p class="wish-subtitle">🎤 Blow on your mic · or tap each candle</p>
+    </header>
+
+    <!-- Profile photo -->
+    <div class="portrait-wrap">
+      <div class="portrait-glow" aria-hidden="true"></div>
+      <div class="portrait">
+        <!-- 🖼️ REPLACE ME: swap assets/profile.jpg with your own photo (square image works best) -->
+        <img src="assets/profile.jpg" alt="Birthday portrait of Aarushi" id="profile-img"
+             onerror="this.parentElement.classList.add('portrait--fallback')">
+      </div>
+    </div>
+
+    <!-- Candles -->
+    <div class="candles" id="candles" role="group" aria-label="Birthday candles, tap to blow out">
+      <button class="candle" id="candle-1" data-candle="1" aria-label="Candle 1, tap to blow out">
+        <span class="flame"></span>
+        <span class="smoke" aria-hidden="true"></span>
+        <span class="wick"></span>
+        <span class="candle-body"></span>
+      </button>
+      <button class="candle" id="candle-2" data-candle="2" aria-label="Candle 2, tap to blow out">
+        <span class="flame"></span>
+        <span class="smoke" aria-hidden="true"></span>
+        <span class="wick"></span>
+        <span class="candle-body"></span>
+      </button>
+      <button class="candle candle--center" id="candle-3" data-candle="3" aria-label="Candle 3, tap to blow out">
+        <span class="flame"></span>
+        <span class="smoke" aria-hidden="true"></span>
+        <span class="wick"></span>
+        <span class="candle-body"></span>
+      </button>
+      <button class="candle" id="candle-4" data-candle="4" aria-label="Candle 4, tap to blow out">
+        <span class="flame"></span>
+        <span class="smoke" aria-hidden="true"></span>
+        <span class="wick"></span>
+        <span class="candle-body"></span>
+      </button>
+      <button class="candle" id="candle-5" data-candle="5" aria-label="Candle 5, tap to blow out">
+        <span class="flame"></span>
+        <span class="smoke" aria-hidden="true"></span>
+        <span class="wick"></span>
+        <span class="candle-body"></span>
+      </button>
+    </div>
+
+    <!-- Cake -->
+    <div class="cake" aria-hidden="true">
+      <div class="cake-plate"></div>
+      <div class="cake-tier cake-tier--bottom">
+        <div class="cake-drip"></div>
+        <div class="cake-dot cake-dot--1"></div>
+        <div class="cake-dot cake-dot--2"></div>
+        <div class="cake-dot cake-dot--3"></div>
+        <div class="cake-dot cake-dot--4"></div>
+      </div>
+      <div class="cake-tier cake-tier--middle">
+        <div class="cake-drip"></div>
+      </div>
+      <div class="cake-tier cake-tier--top">
+        <div class="cake-icing"></div>
+      </div>
+    </div>
+
+    <!-- Mic control -->
+    <div class="mic-wrap">
+      <button id="mic-button" class="mic-button" aria-label="Activate microphone to blow out candles">
+        <svg viewBox="0 0 24 24" class="mic-icon" aria-hidden="true">
+          <path d="M12 15a3 3 0 0 0 3-3V6a3 3 0 0 0-6 0v6a3 3 0 0 0 3 3z" fill="currentColor"/>
+          <path d="M19 11a1 1 0 0 0-2 0 5 5 0 0 1-10 0 1 1 0 0 0-2 0 7 7 0 0 0 6 6.92V20H9a1 1 0 0 0 0 2h6a1 1 0 0 0 0-2h-2v-2.08A7 7 0 0 0 19 11z" fill="currentColor"/>
+        </svg>
+      </button>
+      <p class="mic-status" id="mic-status">Tap mic to blow, or tap the candles</p>
+    </div>
+
+  </div>
+
+  <!-- Confetti canvas, filled only when all candles are out -->
+  <canvas id="confetti-canvas" class="confetti-canvas" aria-hidden="true"></canvas>
+</main>
+
+<!-- ============================================================
+     PAGE 2 — BIRTHDAY LETTER
+     ============================================================ -->
+<section id="letter-page" class="page" aria-label="Birthday letter">
+
+  <div class="petals" id="petals" aria-hidden="true"></div>
+
+  <article class="letter-card">
+    <div class="letter-illustration">
+      <!-- 🖼️ REPLACE ME: swap assets/birthday.png with your own illustration/sticker -->
+      <img src="assets/birthday.png" alt="Birthday cake illustration" id="letter-img"
+           onerror="this.style.display='none'; this.parentElement.classList.add('illustration--fallback')">
+    </div>
+
+    <p class="letter-greeting script-heading">My Dearest Aarushi;</p>
+
+    <h2 class="letter-title">HAPPY 20TH BIRTHDAY AARUSHI</h2>
+
+    <p class="letter-body">
+      💛 Wishing you a blessed year ahead!!<br>
+      enjoy your day 🤭 hoping to see you grow<br>
+      a healthy lifestyle!! Make every moment<br>
+      count and keep smiling.
+    </p>
+
+    <p class="letter-signoff">With all my love 💛</p>
+
+    <div class="letter-actions">
+      <button id="music-toggle" class="pill-button" aria-label="Play background music">
+        <svg viewBox="0 0 24 24" class="pill-icon" aria-hidden="true">
+          <path d="M9 18V5l12-2v13" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="6" cy="18" r="3" fill="none" stroke="currentColor" stroke-width="1.8"/>
+          <circle cx="18" cy="16" r="3" fill="none" stroke="currentColor" stroke-width="1.8"/>
+        </svg>
+        <span id="music-label">Play music</span>
+      </button>
+      <button id="replay-button" class="pill-button pill-button--ghost" aria-label="Replay the wish">
+        <svg viewBox="0 0 24 24" class="pill-icon" aria-hidden="true">
+          <path d="M4 4v6h6M20 20v-6h-6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M5 13a7 7 0 0 0 12.9 3.5M19 11A7 7 0 0 0 6.1 7.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span>Replay</span>
+      </button>
+    </div>
+  </article>
+</section>
+
+<!-- Optional background music. If the file is missing, playback simply fails silently -->
+<!-- 🎵 REPLACE ME / ADD: assets/birthday.mp3 -->
+<audio id="bg-music" src="assets/birthday.mp3" loop preload="none"></audio>
+<audio id="blow-sound" src="assets/blow.mp3" preload="none"></audio>
+
+<script src="script.js"></script>
+</body>
+</html>
